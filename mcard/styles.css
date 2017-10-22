@@ -1,0 +1,13 @@
+body {
+  font-size: 100%;
+  width: 90%;
+  margin: auto;
+}
+
+form {
+  width: 50%;
+}
+
+input {
+  margin-bottom: 0.5rem;
+}
