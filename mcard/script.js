@@ -1,4 +1,5 @@
 var dbRef;
+var errorCode = "";
 window.onload = function() {
   var config = {
   apiKey: "AIzaSyB3IgkjXuZNJUDVkgZAxQf3HUGW8EOS6fI",
@@ -12,14 +13,17 @@ window.onload = function() {
   dbRef = firebase.database();
 }
 
-var email = "teiyuri.aoshima@gmail.com";
-var password = "firebase123";
-var wrong_password = "davidtansucks";
+//var email = "teiyuri.aoshima@gmail.com";
+//var password = "firebase123";
+//var wrong_password = "davidtansucks";
 
 //event handlers
-$('#login').on('click', validateUser);
+$('#login').on('click', loginHandler);
+$('#addNew').on('click', addNewUser);
 
-function addNewUser(email, password) {
+function addNewUser() {
+  var email = $('#email').val();
+  var password = $('#password').val();
   firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -35,27 +39,38 @@ function addNewUser(email, password) {
   });
 }
 
+function loginHandler() {
+  validateUser();
+  setTimeout(function() {
+    if (errorCode == "") {
+      alert("success");
+    }
+  }, 500);
+}
+
+/*firebase has something built in so that if there is an error, nothing else after the else is executed. The statements after .catch will only run if there is no error*/
+/*firebase.catch() will throw an exception when there is an error caught which means that if will exit if there is an error*/
 function validateUser() {
   //get the email and password
   alert("entered");
-  //var email = $('#email').val();
-  //var password = $('#password').val();
+  var email = $('#email').val();
+  var password = $('#password').val();
   //firebase validation
-  firebase.auth().signInWithEmailAndPassword(email, wrong_password).catch(
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(
     function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // [START_EXCLUDE]
-        if (errorCode === 'auth/wrong-password') {
-          alert('Wrong password.');
-        } else {
-          alert(errorMessage);
-        }
-        console.log(error);
-        //document.getElementById('quickstart-sign-in').disabled = false;
-        // [END_EXCLUDE]
-    });
+      // Handle Errors here.
+      errorCode = error.code;
+      var errorMessage = error.message;
+      // [START_EXCLUDE]
+      if (errorCode === 'auth/wrong-password') {
+        alert('Wrong password.');
+      } else {
+        alert(errorMessage);
+      }
+      console.log(error);
+      //document.getElementById('quickstart-sign-in').disabled = false;
+      // [END_EXCLUDE]
+  });
 }
 
 //var contactsRef = dbRef.ref('honey');
@@ -71,30 +86,3 @@ function validateUser() {
 //});
 
 //alert("Done creating reference in firebase!");
-
-/*function validateUser() {
-  //get the email and password
-  alert("entered");
-  //var email = $('#email').val();
-  //var password = $('#password').val();
-  //firebase validation
-  firebase.auth().signInWithEmailAndPassword(email, password).catch(
-    function(error) {
-      if (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // [START_EXCLUDE]
-        if (errorCode === 'auth/wrong-password') {
-          alert('Wrong password.');
-        } else {
-          alert(errorMessage);
-        }
-        console.log(error);
-        //document.getElementById('quickstart-sign-in').disabled = false;
-        // [END_EXCLUDE]
-      } else {
-        alert("successful sign-in");
-      }
-    });
-}*/

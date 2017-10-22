@@ -2,6 +2,7 @@ body {
   font-size: 100%;
   width: 90%;
   margin: auto;
+  font-family: 'Dosis', sans-serif;
 }
 
 form {
@@ -9,5 +10,26 @@ form {
 }
 
 input {
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  letter-spacing: 0.2rem;
+  font-size: 250%;
+}
+
+h3 {
+  letter-spacing: 0.1rem;
+}
+
+label {
+  letter-spacing: 0.1rem;
+}
+button {
+  border: solid 0.1rem grey;
+  background-color: dimgray;
+  color: white;
+  font-size: 90%;
+  padding: 0.3rem;
   margin-bottom: 0.5rem;
 }
