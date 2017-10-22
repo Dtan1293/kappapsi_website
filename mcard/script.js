@@ -14,7 +14,7 @@ window.onload = function() {
 
 var email = "teiyuri.aoshima@gmail.com";
 var password = "firebase123";
-//var wrong_password = "davidtansucks";
+var wrong_password = "davidtansucks";
 
 //event handlers
 $('#login').on('click', validateUser);
@@ -41,9 +41,8 @@ function validateUser() {
   //var email = $('#email').val();
   //var password = $('#password').val();
   //firebase validation
-  firebase.auth().signInWithEmailAndPassword(email, password).catch(
+  firebase.auth().signInWithEmailAndPassword(email, wrong_password).catch(
     function(error) {
-      if (error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -56,9 +55,6 @@ function validateUser() {
         console.log(error);
         //document.getElementById('quickstart-sign-in').disabled = false;
         // [END_EXCLUDE]
-      } else {
-        alert("successful sign-in");
-      }
     });
 }
 
