@@ -13,12 +13,8 @@ window.onload = function() {
   dbRef = firebase.database();
 }
 
-//var email = "teiyuri.aoshima@gmail.com";
-//var password = "firebase123";
-//var wrong_password = "davidtansucks";
-
 //event handlers
-$('#login').on('click', loginHandler);
+$('#login').on('click', validateUser);
 $('#addNew').on('click', addNewUser);
 
 function addNewUser() {
@@ -35,42 +31,30 @@ function addNewUser() {
       alert(errorMessage);
     }
     console.log(error);
-    // [END_EXCLUDE]
   });
-}
-
-function loginHandler() {
-  validateUser();
-  setTimeout(function() {
-    if (errorCode == "") {
-      alert("success");
-    }
-  }, 500);
-  window.location.href = "newMember.html";
 }
 
 /*firebase has something built in so that if there is an error, nothing else after the else is executed. The statements after .catch will only run if there is no error*/
 /*firebase.catch() will throw an exception when there is an error caught which means that if will exit if there is an error*/
 function validateUser() {
   //get the email and password
-  alert("entered");
   var email = $('#email').val();
   var password = $('#password').val();
   //firebase validation
-  firebase.auth().signInWithEmailAndPassword(email, password).catch(
-    function(error) {
+  firebase.auth().signInWithEmailAndPassword(email, password)
+  .then(function (FirebaseUser) {
+    window.location.href = "newMember.html";
+  })
+  .catch(function(error) {
       // Handle Errors here.
       errorCode = error.code;
       var errorMessage = error.message;
-      // [START_EXCLUDE]
       if (errorCode === 'auth/wrong-password') {
         alert('Wrong password.');
       } else {
         alert(errorMessage);
       }
       console.log(error);
-      //document.getElementById('quickstart-sign-in').disabled = false;
-      // [END_EXCLUDE]
   });
 }
 
@@ -85,5 +69,3 @@ function validateUser() {
 //     zip: '127.0.0.1'
 //   }
 //});
-
-//alert("Done creating reference in firebase!");
