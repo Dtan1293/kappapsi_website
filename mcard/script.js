@@ -46,6 +46,7 @@ function loginHandler() {
       alert("success");
     }
   }, 500);
+  window.location.href = "newMember.html";
 }
 
 /*firebase has something built in so that if there is an error, nothing else after the else is executed. The statements after .catch will only run if there is no error*/
