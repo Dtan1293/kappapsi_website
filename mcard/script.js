@@ -44,7 +44,7 @@ function validateUser() {
   .then(function (FirebaseUser) {
     var contactsRef = firebase.database().ref('Northwest_Province/Beta_Omicron/Roster');
     contactsRef.push({
-      name: 'David Tan',
+      name: 'Yuri Tan',
       email: 'Dtan1293@gmail.com',
       location: {
         city: 'Bothell',
@@ -53,7 +53,18 @@ function validateUser() {
       }
     });
     alert("Finished Pushing the node!");
-    window.location.href = "newMember.html";
+
+    //reading from the node: 
+
+    var starCountRef = firebase.database().ref('Northwest_Province/Beta_Omicron/Roster');
+    starCountRef.on('value', function(rootnode) {
+      alert("here");
+      rootnode.forEach(function(childnode){
+        console.log(childnode.val().email);
+      });
+    });
+
+    //window.location.href = "newMember.html";
   })
   .catch(function(error) {
       // Handle Errors here.
