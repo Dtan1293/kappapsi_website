@@ -7,7 +7,26 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
-    <h1>New Member Registration</h1>
+    <!--heading for the member list-->
+    <h1 id="curMemHeading">Current Members</h1>
+    <!--this is where we will append new members list-->
+    <section id="memberList">
+      <table>
+        <thead>
+          <!--<th>Member ID</th>-->
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Graduation Year</th>
+          <th>School</th>
+          <th>Chapter</th>
+        </thead>
+        <tbody id="memberBody"></tbody>
+      </table>
+      <button id="addNewMember" type="button">Add New Member</button>
+    </section>
+    
+    <h1 id="newMemHeading">New Member Registration</h1>
     <form id="newMemForm">
       <label>Name:<br>
         <input id="name" type="text">
@@ -27,14 +46,14 @@
       <label>Chapter:<br>
         <input id="chapter" type="text">
       </label><br>
-      <button type="button">Clear</button>
-      <button type="button">Submit</button>
+      <button id="cancel" type="button">Cancel</button>
+      <button id="submit" type="button">Submit</button>
     </form>
     
     <!--link for firebase-->
     <script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
     <!--link for jquery-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="Javascript_Files/newmember.js"></script>
   </body>
 </html>

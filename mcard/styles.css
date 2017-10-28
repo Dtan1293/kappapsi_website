@@ -32,4 +32,28 @@ button {
   font-size: 90%;
   padding: 0.3rem;
   margin-bottom: 0.5rem;
+  font-family: 'Dosis', sans-serif;
 }
+
+#newMemForm, #newMemHeading {
+  display: none;
+}
+
+th {
+  padding: 1rem 2rem 1rem 1rem;;
+  border: 0.1rem solid #ddd;
+  color: white;
+  background-color: grey;
+}
+
+td {
+  padding: 0.5rem 1rem;
+  border: 0.1rem solid #ddd;
+}
+
+table {
+  border: 0.1rem solid #ddd;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+

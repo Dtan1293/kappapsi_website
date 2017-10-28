@@ -33,8 +33,7 @@ function addNewUser() {
   });
 }
 
-/*firebase has something built in so that if there is an error, nothing else after the else is executed. The statements after .catch will only run if there is no error*/
-/*firebase.catch() will throw an exception when there is an error caught which means that if will exit if there is an error*/
+/*.then will excute if there were no errors. Else the error statement is executed*/
 function validateUser() {
   //get the email and password
   var email = $('#email').val();
@@ -42,17 +41,6 @@ function validateUser() {
   //firebase validation
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then(function (FirebaseUser) {
-    var contactsRef = firebase.database().ref('Northwest_Province/Beta_Omicron/Roster');
-    contactsRef.push({
-      name: 'David Tan',
-      email: 'Dtan1293@gmail.com',
-      location: {
-        city: 'Bothell',
-        state: 'WA',
-        zip: '98021'
-      }
-    });
-    alert("Finished Pushing the node!");
     window.location.href = "newMember.html";
   })
   .catch(function(error) {
