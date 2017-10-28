@@ -61,6 +61,8 @@ $("#addNewMember").on('click', revealMemberForm);
 $('#cancel').on('click', revealMemberList);
 //handler for submit
 $('#submit').on('click', addNewMember);
+//handler for logout button
+$('#logout').on('click', logOut);
 
 //reveal the new member form when user clicks 
 //add new member
@@ -111,4 +113,12 @@ function addNewMember() {
     school: school,
     chapter: chapter
   });
+}
+
+function logOut() {
+  firebase.auth().signOut().then(function() {
+    window.location.href = "index.html";
+  }, function(error) {
+    alert(error.message);
+  }); 
 }
