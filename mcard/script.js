@@ -10,7 +10,6 @@ window.onload = function() {
   messagingSenderId: "555842685294"
   };
   firebase.initializeApp(config);
-  dbRef = firebase.database();
 }
 
 //event handlers
@@ -43,6 +42,17 @@ function validateUser() {
   //firebase validation
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then(function (FirebaseUser) {
+    var contactsRef = firebase.database().ref('Northwest_Province/Beta_Omicron/Roster');
+    contactsRef.push({
+      name: 'David Tan',
+      email: 'Dtan1293@gmail.com',
+      location: {
+        city: 'Bothell',
+        state: 'WA',
+        zip: '98021'
+      }
+    });
+    alert("Finished Pushing the node!");
     window.location.href = "newMember.html";
   })
   .catch(function(error) {
@@ -57,15 +67,3 @@ function validateUser() {
       console.log(error);
   });
 }
-
-//var contactsRef = dbRef.ref('honey');
-
-// contactsRef.push({
-//   name: 'Time to Hack',
-//   email: 'thetime2hack@gmail.com',
-//   location: {
-//     city: 'The Internet',
-//     state: 'The Internet',
-//     zip: '127.0.0.1'
-//   }
-//});
