@@ -15,6 +15,36 @@ window.onload = function() {
 //event handlers
 $('#login').on('click', validateUser);
 $('#addNew').on('click', addNewUser);
+$('#google_login').on('click', googleSignIn);
+
+//only works if you are running XAMPP or it's on a legit webserver!
+function googleSignIn() {
+  var provider = new firebase.auth.GoogleAuthProvider();
+  provider.addScope('profile');
+  provider.addScope('email');
+  console.log("Scope alredy added!");
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    console.log(user);
+    window.location.href = "newMember.html";
+    // ...
+  }).catch(function(error) {
+    console.log("errors happend!");
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorCode);
+    console.log(errorMessage);
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
+}
 
 function addNewUser() {
   var email = $('#email').val();
