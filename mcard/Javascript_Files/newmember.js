@@ -14,9 +14,43 @@ window.onload = function() {
   messagingSenderId: "555842685294"
   };
   firebase.initializeApp(config);
-  
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      var email = firebase.auth().currentUser.email;
+      firebase.database().ref("Chapter_Email_To_Database_Link").once("value")
+      .then(function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+          // key will be "ada" the first time and "alan" the second time
+          var key = childSnapshot.key; //unique id
+          var childDataemail = childSnapshot.val().email;
+          var childDatalink = childSnapshot.val().link;
+          //TODO: store all email addresses lowercase
+          if(childDataemail == email) {
+            loadMCardTable(childDatalink)
+            return true; //stop searching through the data 
+          }
+        });
+      });
+    } else {
+      // No user is signed in.
+      console.log("user not signed in!");
+    }
+  });
+}
+
+//handler for add new member button
+$("#addNewMember").on('click', revealMemberForm);
+//handler for cancel button
+$('#cancel').on('click', revealMemberList);
+//handler for submit
+$('#submit').on('click', addNewMember);
+//handler for logout button
+$('#logout').on('click', logOut);
+
+function loadMCardTable(link) {
   //load the page with firebase data
-  firebase.database().ref('Northwest_Province/Beta_Omicron/Roster').on('value', function(rootnode) {
+  firebase.database().ref(link).on('value', function(rootnode) {
     var memName;
     var memPhone;
     var memEmaill; 
@@ -54,15 +88,6 @@ window.onload = function() {
     });
   });
 }
-
-//handler for add new member button
-$("#addNewMember").on('click', revealMemberForm);
-//handler for cancel button
-$('#cancel').on('click', revealMemberList);
-//handler for submit
-$('#submit').on('click', addNewMember);
-//handler for logout button
-$('#logout').on('click', logOut);
 
 //reveal the new member form when user clicks 
 //add new member

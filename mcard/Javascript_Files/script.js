@@ -10,12 +10,42 @@ window.onload = function() {
   messagingSenderId: "555842685294"
   };
   firebase.initializeApp(config);
+      //injectFireaseCode();
+      
 }
 
 //event handlers
 $('#login').on('click', validateUser);
 $('#addNew').on('click', addNewUser);
 $('#google_login').on('click', googleSignIn);
+
+
+//injecting database initial entries
+
+function injectFireaseCode() {
+  var contactsRef = firebase.database().ref('Chapter_Email_To_Database_Link');
+  contactsRef.push({
+    email: "yellow@gmail.com", 
+    link : "Northeast_Province/Beta_Omicron/Roster"
+  });
+
+    contactsRef.push({
+    email: "blue@gmail.com", 
+    link : "Southwest_Province/Zillow/Roster"
+  });
+
+  //   contactsRef.push({
+  //   name: "Northeast_Province",
+  //   phone: "206-832-5599",
+  //   email: "Dtan1293@gmail.com", 
+  //   grad: "20183",
+  //   school: "Hot stuff",
+  //   chapter: "hot girls"
+  // });
+
+
+
+}
 
 //only works if you are running XAMPP or it's on a legit webserver!
 function googleSignIn() {
@@ -71,6 +101,7 @@ function validateUser() {
   //firebase validation
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then(function (FirebaseUser) {
+    //firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
     window.location.href = "newMember.html";
   })
   .catch(function(error) {
