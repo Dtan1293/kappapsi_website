@@ -1,0 +1,228 @@
+Atlantic Province
+	Collegiate Chapters
+		Theta		Virginia Commomwealth University - Richmond, VA
+		Beta Xi		University of North Carolina - Chapel Hill, NC
+		Gamma Xi	South Carolina College of Pharmacy - Columbia, SC
+		Gamma Phi	University of Georgia - Athens, GA
+		Gamma Psi	Mercer University - Atlanta, GA
+		Delta Lambda	Campbell University - Buies Creek, NC
+		Epsilon Delta	University of Appalachia - Oakwood, VA
+		Epsilon Zeta	East Tennessee State University - Johnson City, TN
+		Epsilon Phi	South University - Columbia, SC
+		Zeta Xi		South College - Knoxville, TN
+		Zeta Rho	Philadelphia College of Medicine School of Pharmacy - Suwanee, GA
+	Graduate Chapters
+		Appalachia Graduate		Bristol, VA
+		Athens Graduate		Athens, GA
+		Atlanta Graduate		Atlanta, GA
+		Buies Creek Graduate		Buies Creek, NC
+		Georgia Graduate		Augusta, GA
+		North Carolina Graduate	Durham, NC
+		Ringgold Graduate		Ringgold, GA
+		South Carolina Graduate	Columbia, SC
+		South Carolina Upstate Graduate	Greenville, SC
+		Virginia Graduate		Richmond, VA
+Great Lakes Province
+	Collegiate Chapters
+		Xi		The Ohio State University - Columbus, OH
+		Upsilon		University of Kentucky - Lexington, KY
+		Beta Lambda	University of Toledo - Toledo, OH
+		Beta Phi	University of Cincinnati - Cincinnati, OH
+		Gamma Delta	Ohio Northern University - Ada, OH
+		Gamma Chi	Ferris State University - Big Rapids, MI
+		Epsilon Theta	Sullivan University - Louisville, KY
+		Zeta Epsilon	Northeast Ohio Medical University - Rootstown, OH
+		Mu Omicron Pi	Wayne State University - Detroit, MI
+	Graduate Chapters
+		Ada Graduate		Ada, OH
+		Central Michigan Graduate	Big Rapids, MI
+		Cincinnati Graduate	Cincinnati, OH
+		Cleveland Graduate	Cleveland, OH
+		Columbus Graduate	Columbus, OH
+		Detroit Graduate	Detroit, MI
+		Kentucky Graduate	Louisville, KY
+		Toledo Graduate	Toledo, OH
+Gulf Coast Province
+	Collegiate Chapters
+		Psi		University of Tennessee - Memphis, TN
+		Beta Rho	University of Mississippi - University, MS
+		Gamma Zeta	Samford University - Birmingham, AL
+		Gamma Omega	University of Arkanasas - Little Rock, AR
+		Delta Gamma	Auburn University - Auburn, AL
+		Delta Eta	Xavier University - New Orleans, LA
+		Epsilon Kappa	Belmont University - Nashville, TN
+		Epsilon Lambda	Lipscomb University - Nashville, TN
+		Zeta Upsilon	Union University-Jackson, TN
+	Graduate Chapters
+		Auburn Graduate		Auburn, AL
+		Birmingham Graduate		Birmingham, AL
+		Louisiana Graduate		Monroe, LA
+		Middle Tennessee Graduate	Nashville, TN
+		North Alabama Graduate	Huntsville, AL
+		South Alabama Graduate	Loxley, AL
+		Tennessee Graduate		Memphis, TN
+Mid-America Province
+	Collegiate Chapters
+		Pi		Purdue University - West Lafayette, IN
+		Rho		University of Kansas - Lawrence, KS
+		Chi		University of Illinois at Chicago - Chicago, IL
+		Beta Upsilon	Butler University - Indianapolis, IN
+		Gamma Theta	University of Missouri K.C. - Kansas City, MO
+		Gamma Pi	St. Louis College of Pharmacy - St. Louis, MO
+		Delta Nu	Midwestern University - Downers Grove, IL
+		Epsilon Rho	University of Illinois at Rockford - Rockford, IL
+		Epsilon Upsilon	Roosevelt University - Schaumburg, IL
+		Epsilon Omega	Rosalind Franklin University - North Chicago, IL
+		Zeta Mu	University of Missouri KC at MSU - Springfield, MO
+	Graduate Chapters
+		Illinois Graduate	Chicago, IL
+		Indiana Graduate	West Lafayette, IN
+		Kansas City Graduate	Kansas City, MO
+		St. Louis Graduate	St. Louis, MO
+Mountain East Province
+	Collegiate Chapters
+		Sigma		University of Maryland - Baltimore, MD
+		Beta Eta	University of West Virginia - Morgantown, WV
+		Beta Kappa	University of Pittsburgh - Pittsburgh, PA
+		Delta Epsilon	Duquesne University - Pittsburgh, PA
+		Delta Kappa	Howard University - Washington, D.C.
+		Delta Xi		Shenandoah University - Winchester, VA
+		Epsilon Nu	University of Maryland E.S.- Princess Anne, MD
+		Epsilon Omicron	D'Youville College - Buffalo, NY
+		Zeta Kappa	Marshall University - Huntington, WV
+	Graduate Chapters
+		Buffalo Graduate		Buffalo, NY
+		District of Columbia Graduate	Washington, D.C.
+		Laurel Highlands Graduate	Altoona, PA
+		Maryland Graduate		Baltimore, MD
+		Maryland Eastern Shore Graduate	Salisbury, MD
+		Pittsburgh Graduate		Pittsburgh, PA
+		West Virginia Graduate		Morgantown, WV
+Northeast Province
+	Collegiate Chapters
+		Mu		Massachusetts College of Pharm.- Boston, MA
+		Nu		University of Connecticut - Storrs, CT
+		Beta Epsilon	University of Rhode Island - Kingston, RI
+		Beta Omega	Temple University - Philadelphia, PA
+		Delta Omicron	Wilkes University - Wilkes-Barre, PA
+		Delta Chi	University of New England - Portland, ME
+		Gamma Lambda	Northeastern University - Boston, MA
+		Zeta Beta	Husson University - Bangor, ME
+		Zeta Zeta	Touro University - New York, NY
+		Zeta Iota	University of St. Joseph - Hartford, CT
+		Zeta Nu		Long Island University - Brooklyn, NY
+		Zeta Pi		St. John's University - Queens, NY
+	Graduate Chapters
+		Albany Graduate		Albany, NY
+		Boston Graduate		Boston, MA
+		Central New York Graduate	Endicott, NY
+		Connecticut Graduate		New Haven, CT
+		Harrisburg Graduate		Harrisburgh, PA
+		Maine Graduate		Portland, ME
+		New Jersey Graduate		Newark, NJ
+		New York Graduate		New York, NY
+		Philadelphia Graduate		Philadelphia, PA
+		Pocono Graduate		Mountain Top, PA
+		Providence Graduate		Providence, RI
+		Southeastern Massachusetts Graduate	New Bedford, MA
+Northern Plains Province
+	Collegiate Chapters
+		Epsilon		University of Minnesota Twin Cities - Minneapolis, MN
+		Beta Nu		Creighton University - Omaha, NE
+		Beta Sigma	North Dakota State University - Fargo, ND
+		Beta Chi	Drake University - Des Moines, IA
+		Beta Psi		University of Wisconsin Madison - Madison, WI
+		Gamma Epsilon	University of Nebraska - Omaha, NE
+		Gamma Kappa	South Dakota State University - Brookings, SD
+		Delta Zeta	University of Iowa - Iowa City, IA
+		Delta Psi	University of Minnesota-Duluth , Duluth, MN
+		Zeta Theta	Concordia University Wisconsin,Mequon, WI
+	Graduate Chapters
+		Iowa Graduate		Des Moines, IA
+		Minnesota Graduate	Minneapolis, MN
+		Nebraska Graduate	Omaha, NE
+		North Dakota Graduate	Fargo, ND
+		South Dakota Graduate	Brookings, SD
+		Wisconsin Graduate	Madison, WI
+Northwest Province
+	Collegiate Chapters
+		Beta Omicron	University of Washington - Seattle, WA
+		Beta Pi		Washington State University - Pullman, WA
+		Gamma Eta	University of Montana - Missoula, MT
+		Delta Mu	University of British Columbia - Vancouver, BC
+		Epsilon Xi	Pacific University - Hillsboro, OR
+		Epsilon Pi	Idaho State University Meredian - Meredian, ID
+		Epsilon Chi	University of Utah - Salt Lake City, UT
+		Zeta Omicron	Roseman University of Health Sciences- South Jordan, UT
+	Graduate Chapters
+		Idaho Graduate		Meridian, ID
+		Montana Graduate	Missoula, MT
+		Palouse Graduate	Spokane, WA
+		Portland Graduate	Portland, OR
+		Seattle Graduate	Seattle, WA
+		Utah Graduate		Salt Lake City, UT
+Pacific West Province
+	Collegiate Chapters
+		Beta Gamma	University of California San Francisco - San Francisco, CA
+		Gamma Nu	University of the Pacific - Stockton, CA
+		Gamma Upsilon	University of Arizona - Tucson, AZ
+		Delta Sigma	Midwestern University at Glendale - Glendale, AZ
+		Delta Tau	Roseman University of Health Sciences - Henderson, NV
+		Delta Phi	University of California San Diego - La Jolla, CA
+		Epsilon Gamma	Western University of Health Sciences - Pomona, CA
+		Epsilon Iota	California Northstate University COP - Elk Grove, CA
+		Epsilon Psi	University of Hawaii - Hilo, HI
+		Zeta Sigma	California Health Sciences University - Clovis, CA
+		Zeta Tau	Chapman University - Orange, CA
+	Graduate Chapters
+		Arizona Graduate	Tucson, AZ
+		Los Angeles Graduate	Los Angeles, CA
+		Nevada Graduate	Las Vegas, NV
+		Pacific Graduate	Stockton, CA
+		Pomona Graduate	Pomona, CA
+		San Diego Graduate	San Diego, CA
+		San Francisco Graduate	San Francisco, CA
+Southeast Province
+	Collegiate Chapters
+		Iota		South Carolina MUSC - Charleston, SC
+		Gamma Sigma	University of Florida - Gainesville, FL
+		Delta Iota	Florida A&M University - Tallahassee, FL
+		Delta Rho	Nova Southeastern University - Ft. Lauderdale, FL
+		Delta Upsilon	Palm Beach Atlantic University - West Palm Beach, FL
+		Delta Omega	South University - Savannah, GA
+		Epsilon Eta	LECOM Bradenton School of Pharmacy - Bradenton, FL
+		Epsilon Mu	University of Florida-Orlando - Orlando, FL
+		Epsilon Sigma	University of Florida - St. Petersburg - St. Petersburg, FL
+		Zeta Gamma	University of Florida - Jacksonville - Jacksonville, FL
+		Zeta Delta	University of South Florida - Tampa, FL
+	Graduate Chapters
+		Charleston Graduate		Charleston, SC
+		Gainesville Graduate		Gainesville, FL
+		Jacksonville Graduate		Jacksonville, FL
+		North Florida Graduate		Tallahassee, FL
+		Orlando Graduate		Orlando, FL
+		Savannah Graduate		Savannah, GA
+		SE Florida / Bahamas Graduate	Ft. Lauderdale, FL
+		Tampa Graduate		Tampa, FL
+Southwest Province
+	Collegiate Chapters
+		Gamma Omicron	University of Oklahoma H.S. Center - Oklahoma City, OK
+		Gamma Rho		University of New Mexico - Albuquerque, NM
+		Delta Beta		Southwest Oklahoma State University - Weatherford, OK
+		Delta Delta		University of Houston - Houston, TX
+		Delta Theta		Texas Southern University - Houston, TX
+		Delta Pi			Texas Tech University - Amarillo, TX
+		Epsilon Beta		University of Incarnate Word - San Antonio, TX
+		Epsilon Epsilon		Texas A&M Health Science Center - Kingsville, TX
+		Epsilon Tau		Texas Tech Abilene - Abilene, TX
+		Zeta Eta		Regis University - Denver, CO
+		Zeta Lambda		Univ. of North Texas Health Science Center - Ft. Worth, TX
+	Graduate Chapters
+		Dallas/Fort Worth Graduate	Dallas-Fort Worth, TX
+		Houston Graduate		Houston, TX
+		New Mexico Grad		Albuquerque, NM
+		Oklahoma Graduate		Oklahoma City, OK
+		San Antonio Graduate		San Antonio, TX
+		South Texas Graduate		Corpus Christi, TX
+		Southwestern Graduate		Weatherford, OK
+		Texas Graduate			Austin, TX
