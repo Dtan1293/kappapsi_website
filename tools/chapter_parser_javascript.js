@@ -1,28 +1,24 @@
-if (window.File && window.FileReader && window.FileList && window.Blob) {
-    console.log('The File APIs are fully supported in this browser.');
-} else {
-    console.log('The File APIs are not fully supported in this browser.');
-}
-
 //document.getElementById('file').addEventListener('change', readFile, false);
 
-$("#file").bind("change", readFile);
+$("#file").bind("change", ReadFile);
+$("#email_file").bind("change", ParseEmailToChapter);
 
-function readFile (evt) {
+function ReadFile (evt) {
    var files = evt.target.files;
    var file = files[0];           
    var reader = new FileReader();
    reader.onload = function(event) { 
-     var lines = event.target.result.split('\n');
-     var t0 = performance.now();
-     processLines(lines);
-     var t1 = performance.now();
-     console.log("Call to processLines took " + (t1 - t0) + " milliseconds.");
+	    var lines = event.target.result.split('\n');
+	     //using PerformanceTime()
+		var stopwatch = new PerformanceTime();
+		stopwatch.startTime();
+	    ProcessLines(lines);
+       	stopwatch.getTimeDiffString();
    }
    reader.readAsText(file)
 }
 
-function processLines(lines) {
+function ProcessLines(lines) {
 	var province_count = 0;
 	var collegiate_chapter_count = 0;
 	var graduate_chapter_count = 0;
@@ -71,7 +67,47 @@ function processLines(lines) {
 }
 
 //determines the number of front tabs are present!
-function numberOfFrontTab(line) {
+function MumberOfFrontTab(line) {
 
 }
 
+function ParseEmailToChapter() {
+
+}
+
+//stopwatch type function accurate to the microseconds!
+function PerformanceTime() {
+	var t0 =  0;
+	var t1 = 0;
+
+	this.startTime = function() {
+		t0 = performance.now();
+		t1 = 0;
+	};
+	this.stopTime = function() {
+		t1 = performance.now();
+	};
+	this.getTimeDiff = function() {
+		if(t1 === 0 && t0 != 0) {
+			t1 = performance.now();
+		} else if(t0 === 0) {
+			return -1;
+		}
+		stopwatch_done = true;
+		return t1 - t0;
+	};
+	this.getTimeDiffString = function() {
+		return ("It took " + this.getTimeDiff() + " milliseconds!");
+	};
+}
+
+function DetermineBrowserFileUploadSupport() {
+	//basically add some kind of check to let the users know file uploading is not supported!
+	if (window.File && window.FileReader && window.FileList && window.Blob) {
+	    console.log('The File APIs are fully supported in this browser.');
+	    return true;
+	} else {
+	    console.log('The File APIs are not fully supported in this browser.');
+	    return false;
+	}
+}
