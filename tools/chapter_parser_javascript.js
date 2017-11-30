@@ -1,21 +1,61 @@
-//document.getElementById('file').addEventListener('change', readFile, false);
+//TODO
 
-$("#file").bind("change", ReadFile);
-$("#email_file").bind("change", ParseEmailToChapter);
+//security note, test if a person can copy and paste stuff to manipulate with database through console of
+//web broswer!
+
+$(window).on("load", function () {
+	$("#file").bind("change", ReadFile);
+	$("#email_file").bind("change", ParseEmailToChapter);
+});
+
 
 function ReadFile (evt) {
-   var files = evt.target.files;
-   var file = files[0];           
-   var reader = new FileReader();
-   reader.onload = function(event) { 
-	    var lines = event.target.result.split('\n');
-	     //using PerformanceTime()
+	var stopwatch = new PerformanceTime();
+	var files = evt.target.files;
+	var file = files[0];           
+	var reader = new FileReader();
+	reader.onload = function(event) { 
+		var test = new PerformanceTime();
+		var lines = event.target.result.split('\n');
+		ProcessLines(lines);
+		console.log(test.getTimeDiffString());
+	}
+	reader.readAsText(file)
+	console.log(stopwatch.getTimeDiffString());
+}
+
+function ParseEmailToChapter(evt) {
+	var files = evt.target.files;
+	var file = files[0];           
+	var reader = new FileReader();
+	reader.onload = function(event) { 
+		//create an enum to avoid confusion
+		var lines = event.target.result.split('\n');
+		 //using PerformanceTime()
 		var stopwatch = new PerformanceTime();
 		stopwatch.startTime();
-	    ProcessLines(lines);
-       	stopwatch.getTimeDiffString();
-   }
-   reader.readAsText(file)
+
+		//first grab the general columns of the data in CSV format
+		var columns = lines[0].split(",");
+		console.log("Columns Presented: ");
+		for(var i = 0; i < columns.length; i++) {
+			console.log(columns[i]);
+		}
+
+		for(var i = 1; i < lines.length; i++) {
+			var data = lines[i].split(",");
+			var chapter = data[0];
+			var university = data[1];
+			var email = data[2];
+			var type = data[3];
+			var province = data[4];
+			var link = province + "/" + chapter;
+			console.log(link);
+
+			//store this data to firebase!
+		}
+	}
+	reader.readAsText(file)
 }
 
 function ProcessLines(lines) {
@@ -67,17 +107,17 @@ function ProcessLines(lines) {
 }
 
 //determines the number of front tabs are present!
-function MumberOfFrontTab(line) {
+function NumberOfFrontTab(line) {
 
 }
 
-function ParseEmailToChapter() {
+function StoreDataSetToFireBase(url, data) {
 
 }
 
 //stopwatch type function accurate to the microseconds!
 function PerformanceTime() {
-	var t0 =  0;
+	var t0 =  performance.now();
 	var t1 = 0;
 
 	this.startTime = function() {
@@ -93,7 +133,6 @@ function PerformanceTime() {
 		} else if(t0 === 0) {
 			return -1;
 		}
-		stopwatch_done = true;
 		return t1 - t0;
 	};
 	this.getTimeDiffString = function() {
@@ -101,13 +140,14 @@ function PerformanceTime() {
 	};
 }
 
+
 function DetermineBrowserFileUploadSupport() {
 	//basically add some kind of check to let the users know file uploading is not supported!
 	if (window.File && window.FileReader && window.FileList && window.Blob) {
-	    console.log('The File APIs are fully supported in this browser.');
-	    return true;
+		console.log('The File APIs are fully supported in this browser.');
+		return true;
 	} else {
-	    console.log('The File APIs are not fully supported in this browser.');
-	    return false;
+		console.log('The File APIs are not fully supported in this browser.');
+		return false;
 	}
 }
