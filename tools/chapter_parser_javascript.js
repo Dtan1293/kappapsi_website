@@ -56,6 +56,8 @@ function ParseEmailToChapter(evt) {
 		}
 	}
 	reader.readAsText(file)
+
+	//testing git!
 }
 
 function ProcessLines(lines) {
