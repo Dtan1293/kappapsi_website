@@ -1,6 +1,4 @@
 var email_array = [];
-var ID_array = [];
-var count = 0;
 
 window.onload = function() {
     var config = {
@@ -12,33 +10,24 @@ window.onload = function() {
     messagingSenderId: "555842685294"
     };
     firebase.initializeApp(config);
-        //injectFireaseCode();
+    
     loadMCardTable();
-    //injectNewChapterCode();
     //updateChapterInfo();
-    //addNewChapter("stanley's_chapter", "1234@gmail.com", "/hello/world/dawg");
-  }
-
-  function syncChanges(list, ref) {
-    ref.on('child_added', function _add(snap, prevChild) {
-      var data = snap.val();
-      data.$id = snap.key(); // assumes data is always an object
-      var pos = positionAfter(list, prevChild);
-      list.splice(pos, 0, data);
-    });
+    //addNewChapter("stanley's_chapter", "1234@gmail.com", "/hello/world/dawg", "active");
+    $('#button_test').on('click', displayIdEmailArray);
   }
 
 function loadMCardTable() {
+    var memID;
+    var memEmail; 
+    var memLink; 
+    var memChapter;
+    var tbody = $('#chapterBody');
+    tbody.html("");
+    var tr;
+    var td;
     //load the page with firebase data
     firebase.database().ref("Chapter_Email_To_Database_Link").on('value', function(rootnode) {
-      var memID;
-      var memEmail; 
-      var memLink; 
-      var memChapter;
-      var tbody = $('#chapterBody');
-      tbody.html("");
-      var tr;
-      var td;
       rootnode.forEach(function(childnode) {
         //console.log(childnode.key); //printing out the unique key per child
         memID = childnode.key;
@@ -47,12 +36,7 @@ function loadMCardTable() {
         memLink = childnode.val().link;
 
         //add it to our "hashtable"
-        //console.log(memEmail);
-        //console.log("1");
-        //email_array.push(memEmail);
         email_array[memID] = memEmail;
-        //ID_array[count++] = memID;
-        //console.log(count);
 
         //adding data to the tabel on the page    
         //create a new row
@@ -69,28 +53,62 @@ function loadMCardTable() {
         tr.append(td);
         tbody.append(tr);
       });
-      console.log("Done loading!" + email_array);
-      for(var i in email_array) {
-          console.log(i + email_array[i])
-      }
-      //displaytest();
     });
   }
 
+  //adding a new chapter to the database
 function addNewChapter(chapter_name, email_address, link_string) {
     var contactsRef = firebase.database().ref('Chapter_Email_To_Database_Link');
     contactsRef.push({
         chapter: chapter_name,
         email: email_address, 
-        link : link_string
+        link : link_string,
+        active : true
     });
 }
 
-function updateChapterInfo(id) {
+//updating the chapter info for all fields
+function updateChapterInfo(id, name, email_address, link_address, status) {
      //referencing the unique child id for updating / deleting
     var contactsRef = firebase.database().ref('Chapter_Email_To_Database_Link/' + id);
     contactsRef.update({
+        chapter: name,
+        email: email_address,
+        link : link_address,
+        active : status
+    });
+}
+
+//updating just the chapter's email
+function updateChapterEmail(id, email) {
+    var contactsRef = firebase.database().ref('Chapter_Email_To_Database_Link/' + id);
+    contactsRef.update({
         email: "Dtan1293@gmail.com"
+    });
+}
+
+//updating just the chapter's name
+//caution: this may cause issues down the road...
+function updateChapterName(id, chapter_name) {
+    var contactsRef = firebase.database().ref('Chapter_Email_To_Database_Link/' + id);
+    contactsRef.update({
+        chapter: chapter_name
+    });
+}
+
+//updating the chapter's link
+function updateChapterLink(id, link_url) {
+    var contactsRef = firebase.database().ref('Chapter_Email_To_Database_Link/' + id);
+    contactsRef.update({
+        link: link_url
+    });
+}
+
+//updating the chapters's status
+function updateChapterStatus(id, status) {
+    var contactsRef = firebase.database().ref('Chapter_Email_To_Database_Link/' + id);
+    contactsRef.update({
+        active: status
     });
 }
 
@@ -117,18 +135,9 @@ function removeChapterInfoByID(id) {
     });
 }
 
-//declares the chapter inactive
-//this will display on the html active or inactive
-function moveChapterInactive() {
-
-}
-
-//declares chapter active
-//this will display on the html active
-function moveChapterActive() {
-
-}
-
-function displaytest() {
-    console.log(email_array[0]);
+function displayIdEmailArray() {
+    console.log("Display Test!");
+    for(var i in email_array) {
+        console.log(i + "\n" + email_array[i])
+    }
 }
