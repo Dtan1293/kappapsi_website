@@ -1,4 +1,12 @@
+//please read https://stackoverflow.com/questions/13104494/does-javascript-pass-by-reference
+//for more information about object arrays! The reference is pass by value, but content can be changed!
+
 var email_array = [];
+
+var options = {
+    keys: ['email'],
+    threshold: 0.3
+}
 
 window.onload = function() {
     var config = {
@@ -36,7 +44,10 @@ function loadMCardTable() {
         memLink = childnode.val().link;
 
         //add it to our "hashtable"
-        email_array[memID] = memEmail;
+        var item = {};
+        item ["id"] = memID;
+        item ["email"] = memEmail;
+        email_array.push(item);
 
         //adding data to the tabel on the page    
         //create a new row
@@ -114,14 +125,24 @@ function updateChapterStatus(id, status) {
 
 //this will permanently delete a chapter! Only to be used incase created by mistake!
 function removeChapterInfoByEmail(email_address) {
-    var adaRef = firebase.database().ref('users/ada');
-    adaRef.remove()
-    .then(function() {
-        console.log("Remove succeeded.")
-    })
-    .catch(function(error) {
-        console.log("Remove failed: " + error.message)
-    });
+    var options = {
+        keys: ['email'],
+        threshold: 0.3
+    }
+    var fuse = new Fuse(email_array, options);
+    var results = fuse.search(email_address);
+    //somehow display the results to the user, and then they can choose which best result!
+    if(results != NULL) {
+        $.each(results, function(index, element) {
+            console.log(element.email + " " + element.id); //display the result email address matches!
+        });
+        //after user picks, then pass the ID to the function below!
+        removeChapterInfoByID(id);
+        return true;
+    }  else {
+        //say how no matches occured?
+        return false;
+    }
 }
 
 function removeChapterInfoByID(id) {
@@ -137,7 +158,14 @@ function removeChapterInfoByID(id) {
 
 function displayIdEmailArray() {
     console.log("Display Test!");
-    for(var i in email_array) {
-        console.log(i + "\n" + email_array[i])
-    }
+    console.log(JSON.stringify(email_array)); //printing out the object array in JSON format
+
+
+    // $.each(email_array, function(index, element) { //using a foreach loop to iterate through the object
+    //     console.log(element.email + " " + index); 
+    // });
+
+    var fuse = new Fuse(email_array, options);
+    var results = fuse.search("Dtan1293@gmail.com");
+    console.log(results);
 }
