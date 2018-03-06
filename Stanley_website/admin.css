@@ -1,0 +1,73 @@
+body {
+    font-size: 100%;
+    width: 90%;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+h3 {
+    color: dodgerblue;
+}
+
+header img {
+    width: 15%;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    float: left;
+}
+
+header ul {
+    float: left;
+    padding-top: 1.5rem;
+    line-height: 1.5rem;
+}
+
+#executive-committee-table {
+    clear: both;
+    width: 100%;
+    padding-top: 2rem;
+}
+
+#executive-committee-table table, th, td, #new-brothers table, th, td {
+    border: 0.1rem solid black;
+    border-collapse: collapse;
+}
+
+#executive-committee-table th, td, #new-brothers th, td {
+    padding: 0.2rem 2rem;
+    text-align: left;
+}
+
+#executive-committee-table button, #new-brothers button, #edit button {
+    margin-top: 1rem;
+    padding: 0.2rem;
+    border: 0.1rem skyblue solid;
+    background-color: lightblue;
+    font-family: 'Poppins', sans-serif;
+}
+
+#new-brothers {
+    margin-top: 2rem;
+    float: left;
+}
+
+#approve-all {
+    float: right;
+}
+
+#edit {
+    clear: both;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#edit input, select {
+    margin-bottom: 0.5rem;
+    padding: 0.2rem;
+}
+
+#results {
+    padding-bottom: 3rem;
+    display: none;
+}

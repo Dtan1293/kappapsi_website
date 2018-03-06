@@ -1,0 +1,61 @@
+body {
+    font-size: 100%;
+    width: 90%;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+h3 {
+    color: dodgerblue;
+}
+
+header img {
+    width: 15%;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    float: left;
+}
+
+header ul {
+    float: left;
+    padding-top: 1rem;
+    line-height: 1.5rem;
+}
+
+/*for each li that is the 6th or 7th child of it's parent, do the following to the 
+<a> in it*/
+li:nth-child(6) a, li:nth-child(7) a {
+    text-decoration: none;
+    color: black;
+}
+
+#officer-table {
+    clear: both;
+    width: 100%;
+    padding-top: 2rem;
+}
+
+#officer-table table, th, td, #roster table, th, td {
+    border: 0.1rem solid black;
+    border-collapse: collapse;
+}
+
+#officer-table th, td, #roster th, td {
+    padding: 0.2rem 2rem;
+    text-align: left;
+}
+
+#officer-table button, #roster button {
+    margin-top: 1rem;
+    padding: 0.2rem;
+    border: 0.1rem skyblue solid;
+    background-color: lightblue;
+    font-family: 'Poppins', sans-serif;
+}
+
+#roster {
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Admin Page</title>
+        <link rel="stylesheet" href="admin.css">
+    </head>
+    <body>
+         <header>
+            <img src="Images/NW+Province+Logo+Color.png">
+            <ul style="list-style: none">
+                <li>Central Office</li>
+                <li><a href="">Inbox</a></li>
+            </ul>
+        </header>
+        <section id="executive-committee-table">
+            <h3>Executive Committee Officers</h3>
+            <table>
+                <tr>
+                    <th>Position</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Graduation Year</th>
+                    <th>Edit</th>
+                </tr>
+                <tr>
+                    <td>Grand Regent</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="checkbox" id="regent-edit"></td>
+                </tr>
+                <tr>
+                    <td>Grand Vice Regent</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="checkbox" id="vice-edit"></td>
+                </tr>
+                <tr>
+                    <td>Secretary</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="checkbox" id="secretary-edit"></td>
+                </tr>
+                <tr>
+                    <td>Treasurer</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="checkbox" id="treasurer-edit"></td>
+                </tr>
+                <tr>
+                    <td>Historian</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="checkbox" id="historian-edit"></td>
+                </tr>
+                <tr>
+                    <td>Chaplain</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="checkbox" id="chaplain-edit"></td>
+                </tr>
+                <tr>
+                    <td>Webmaster</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="checkbox" id="web-edit"></td>
+                </tr>
+            </table>
+            <button type="button">Add New Position</button>
+            <button type="button">Choose an Item</button>
+        </section>
+        
+        <section id="new-brothers">
+            <h3>Approved New Brothers</h3>
+            <table>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Personal Email</th>
+                    <th>Gender</th>
+                    <th>DOB</th>
+                    <th>Initiation</th>
+                    <th>Permanent Address</th>
+                    <th>Graduation Year</th>
+                    <th>Approve</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </table>
+            <button type="button" id="approve-all">Approve All</button>
+            <button type="button">Edit</button>
+            <button type="button">Update Roster/Sumbit</button>
+        </section>
+        
+        <section id="edit">
+            <h3>Edit Existing Brothers</h3>
+            <p>Search Records:</p>
+            <label>Name:
+                <input type="text" id="name">
+            </label><br>
+            <label>Birthdate:
+                <input type="date" id="birthday">
+            </label><br>
+            <label>School:
+                <select>
+                    <option></option>
+                    <option>University of Washington</option>
+                    <option>Oregon State University</option>
+                </select>
+            </label><br>
+            <label>Gender:
+                <select>
+                    <option></option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>I choose not to answer</option>
+                </select>
+            </label><br>
+            <button type="button">Search</button>
+        </section>
+        
+        <!--for later use to be filled out with JS-->
+        <section id="results">
+            <h3>Display Results</h3>
+        </section>
+    </body>
+</html>
