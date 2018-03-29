@@ -22,6 +22,7 @@
         <section id="officer-table">
             <h3>Officers</h3>
             <table>
+                <!-- Need to generate using javascipt -->
                 <tr>
                     <th>Position</th>
                     <th>Name</th>
@@ -87,8 +88,8 @@
                     <td><input type="checkbox" id="web-edit"></td>
                 </tr>
             </table>
-            <button type="button">Add New Position</button>
-            <button type="button">Choose an Item</button>
+            <button type="button" id="add_new_position">Add New Position</button>
+            <button type="button" id="choose">Choose an Item</button>
         </section>
         
         <section id="roster">
@@ -143,4 +144,10 @@
             <button type="button">Update Roster/Sumbit</button>
         </section>
     </body>
+    <script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
+    <!--link for jquery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="chapter.js"></script>
 </html>
