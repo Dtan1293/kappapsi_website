@@ -18,10 +18,10 @@ window.onload = function() {
     google.charts.setOnLoadCallback(function() {
         drawChart(0, 0)
     });
+
     //removeNode("Chapter_Email_To_Database_Link");
     loadMCardTable();
-    //updateChapterInfo();
-    //addNewChapter("stanley's_chapter", "1234@gmail.com", "/hello/world/dawg", "active");
+
     $('#button_test').on('click', displayIdEmailArray);
     $('#file').bind('change', ReadFile);
     $('#upload_chapter_emails').bind('change', ParseEmailToChapter);
@@ -110,7 +110,7 @@ function ReadFile (evt) {
 
 function ParseEmailToChapter(evt) {
 	var files = evt.target.files;
-	var file = files[0];           
+    var file = files[0];    
 	var reader = new FileReader();
 	reader.onload = function(event) { 
 		//create an enum to avoid confusion
@@ -129,7 +129,8 @@ function ParseEmailToChapter(evt) {
         var count = 0;
         
 		for(var i = 1; i < lines.length; i++) {
-			var data = lines[i].split(",");
+            var data = lines[i].split(",");
+            sanitizeData(data);
 			var chapter = data[0]; //Beta
 			var university = data[1]; //UW
 			var email = data[2]; 
@@ -141,14 +142,48 @@ function ParseEmailToChapter(evt) {
             var website = data[8];
             var status = data[9];
             var link = province + "/" + degree + "/" + chapter;
-            console.log(link);
             count++;
-            addNewChapter(province, chapter, email, link, status);
-            //addNewChapterToDatabase();
+            if(degree === "Collegiate") {
+                addNewChapter(province, chapter, email, link, status);
+                addNewUnderGradChapterToDatabase(chapter, province, founded_year, university);
+            } else {
+                //add graduate!
+            }
+            
         }
         console.log("Added " + count + " to the database!");
 	}
     reader.readAsText(file);
+}
+
+function sanitizeData(data) {
+    for(var i = 0; i < data.length; i++) {
+        data[i] = data[i].replace(/ /g, "_");
+    }
+}
+
+function addNewUnderGradChapterToDatabase(chapter_name, province, founded_year, school_name) {
+    if (province != null) {
+        var rootref = firebase.database().ref("Collegiate" + "/" + province + "/" + chapter_name);
+        rootref.set({
+            chapterName: chapter_name, 
+            foundingYear : founded_year,
+            schoolName: school_name,
+            roster: "",
+            officers : {
+                regent : "",
+                vice_regent : "",
+                secretary : "",
+                treasurer : "",
+                historian : "",
+                chaplain : "", 
+                webmaster : ""
+            },
+            roster : ""
+        });
+    } else {
+        return;
+    }
 }
 
 function ProcessLines(lines) {
@@ -258,9 +293,6 @@ function addNewChapter(province, chapter_name, email_address, link_string, activ
         return; 
     }
 
-    province = province.replace(" ", "_");
-    chapter_name = chapter_name.replace(" ", "_");
-    link_string = link_string.replace(" ", "_");
     active_status = active_status.replace("\r", "");
     var contactsRef = firebase.database().ref('Chapter_Email_To_Database_Link/' + province + "/" + chapter_name);
     contactsRef.set({
