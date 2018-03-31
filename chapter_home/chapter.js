@@ -20,14 +20,26 @@
         //getCurrentUserInfo(gotUserPromise);
 
         setUpButtonTriggers();
+        
+        //check to see if database link was stored in the session storage, if not store it!
         if(!resolveDatabaseLink()) {
             getCurrentUserInfo().then(function(resolve){
                 referenceEmailToChapterLink(resolve);
             }).catch(function(reject){
+                //TODO : insert javascript function that blacks out the webpage background!
                 alert("Couldn't find you in the database! Please contact webmaster!");
+                error_function() //this is hack to ensure js script won't continue
             });
         }
-        populatepage();
+        //
+        populatePage();
+    }
+
+    function populatePage() {
+        var link = sessionStorage.databaselink;
+        firebase.database().ref(link + "/" + chapterName).once("value").then(function(result) {
+            //grab DOM element and update
+        });
     }
 
     //use as a backup if the session storage came up empty!
@@ -79,8 +91,8 @@
     }
 
     function setUpButtonTriggers() {
-        $('add_new_position').click(addNewPosition);
-        $("$add_new_brother").click(addNewBrother);
+        $("#add_new_position").click(addNewPosition);
+        $("#add_new_brother").click(addNewBrother);
     }
 
     function addNewBrother() {
@@ -114,4 +126,4 @@
             console.log("database not supported!");
         }
     }
-});
+})();
